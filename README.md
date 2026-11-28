@@ -268,7 +268,7 @@ Provision **AtmoSync – Smart Container Monitoring Dashboard** via the Superset
 
 ---
 
-### Vignesh – Dashboard & Data Visualization
+
 
 - Apache Superset dashboard development (`AtmoSync – Smart Container Monitoring Dashboard`).
 - Dashboard layout and configuration (KPI row, time-series trend row, container comparison rows, health summary table, and methodology disclaimer).
