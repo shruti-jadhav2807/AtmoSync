@@ -44,36 +44,36 @@ The pipeline combines idempotent batch CSV loading and real-time Apache Kafka st
 ![Apache Superset Dashboard Overview](screenshots/02_superset_dashboard.png)
 *`AtmoSync – Smart Container Monitoring Dashboard` showing native dashboard filters (`Container ID`, `Product`, `Route`, `Time Range`), methodology disclaimer, and KPI cards (`240` readings, `5` active containers, `3` containers with statistical drift anomalies, `5.62 °C` average temperature).*
 
-![Temperature Trend Chart](screenshots/03_temperature_trend.png)
-*Hourly temperature trend (`°C`) across `C001`–`C005` showing `C002` (`tomato`, `Nashik-Delhi`) drifting upward to `10.22 °C`.*
+# ![Temperature Trend Chart](screenshots/03_temperature_trend.png)
+ *Hourly temperature trend (`°C`) across `C001`–`C005` showing `C002` (`tomato`, `Nashik-Delhi`) drifting upward to `10.22 °C`.*
 
-![Humidity Trend Chart](screenshots/09_humidity_trend.png)
-*Hourly relative humidity (`%`) comparison across all five refrigerated shipping containers.*
+# ![Humidity Trend Chart](screenshots/09_humidity_trend.png)
+ *Hourly relative humidity (`%`) comparison across all five refrigerated shipping containers.*
 
-![Container-wise Temperature Comparison](screenshots/10_container_temperature_comparison.png)
+# ![Container-wise Temperature Comparison](screenshots/10_container_temperature_comparison.png)
 *Average temperature (`°C`) per container, highlighting elevated mean temperature on `C002` (`7.64 °C`).*
 
-![Vibration Analysis by Container](screenshots/11_vibration_analysis.png)
+# ![Vibration Analysis by Container](screenshots/11_vibration_analysis.png)
 *Average and maximum vibration (`g`) across `C001`–`C005`.*
 
 ### 3. Statistical Anomaly Analysis & Container Health Summary
 ![Statistical Anomaly Comparison](screenshots/04_statistical_anomaly_analysis.png)
 *Counts of readings exceeding `|z-score| >= 2.0` relative to each container's initial 12-reading baseline (`C002`: `19`, `C001`: `7`, `C004`: `3`). Statistical drift indicators only — not confirmed biological spoilage.*
 
-![Container Health Summary Overview](screenshots/05a_container_health_summary_overview.png)
+# ![Container Health Summary Overview](screenshots/05a_container_health_summary_overview.png)
 *`marts.mart_container_health_summary` table view showing container metadata (`product`, `route`), `total_readings` (`48` each), and latest telemetry.*
 
-![Container Health Summary Drift & Anomalies](screenshots/05_container_health_summary.png)
+# ![Container Health Summary Drift & Anomalies](screenshots/05_container_health_summary.png)
 *`marts.mart_container_health_summary` drift columns showing `baseline_avg_temp_c`, `latest_temp_drift_c`, `latest_humidity_drift_pct`, `latest_temp_zscore`, and `statistical_drift_anomaly_count`.*
 
 ### 4. PostgreSQL, dbt Core & Apache Kafka Verification
 ![PostgreSQL sensor_readings Table](screenshots/06_postgresql_sensor_readings.png)
 *PostgreSQL 16 `public.sensor_readings` table schema, `UNIQUE(container_id, timestamp_utc)` constraint, `240` total rows across `5` containers, and sample telemetry records.*
 
-![dbt Models and Tests](screenshots/07_dbt_models_and_tests.png)
+# ![dbt Models and Tests](screenshots/07_dbt_models_and_tests.png)
 *dbt Core 1.11 model inventory (`staging`, `intermediate`, `marts`), `58/58` passing data quality tests, and `marts.mart_container_health_summary` query output.*
 
-![Kafka Pipeline and Topics](screenshots/08_kafka_pipeline_topics.png)
+# ![Kafka Pipeline and Topics](screenshots/08_kafka_pipeline_topics.png)
 *Apache Kafka 3.9.0 (KRaft) topic partitions (`sensor.readings` 5 partitions, `sensor.readings.dlq` 1 partition), consumer group offsets, and `data_engineering.atmosync.validate` output.*
 
 ## Setup (Python 3.12)
