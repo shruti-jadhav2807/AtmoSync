@@ -252,6 +252,17 @@ Provision **AtmoSync – Smart Container Monitoring Dashboard** via the Superset
 
 ## Contributions & Credits
 
+### Vignesh – Dashboard & Data Visualization
+
+- Apache Superset dashboard development (`AtmoSync – Smart Container Monitoring Dashboard`).
+- Dashboard layout and configuration (KPI row, time-series trend row, container comparison rows, health summary table, and methodology disclaimer).
+- Data visualization and chart development (4 KPI cards, 2 time-series line charts, 3 comparison bar charts, and 1 health summary table).
+- Dashboard filters and interactive functionality (native filters for Container ID, Product, Route, and Time Range).
+- Visual presentation of container telemetry (`temperature_c`, `humidity_pct`, `vibration_g`) and statistical anomaly metrics.
+- Original synthetic dataset and data-generation script (`sensor_readings.csv` and `generate_data.py`).
+
+---
+
 ### Sania Maheen – Data Engineering, Streaming & Integration
 
 - Python-based sensor data ingestion (`data_engineering/atmosync/ingest.py`, schema/type validation, UTC normalization).
@@ -267,12 +278,3 @@ Provision **AtmoSync – Smart Container Monitoring Dashboard** via the Superset
 - Project testing, pipeline validation, troubleshooting, and technical documentation.
 
 ---
-
-### Vignesh – Dashboard & Data Visualization
-
-- Apache Superset dashboard development (`AtmoSync – Smart Container Monitoring Dashboard`).
-- Dashboard layout and configuration (KPI row, time-series trend row, container comparison rows, health summary table, and methodology disclaimer).
-- Data visualization and chart development (4 KPI cards, 2 time-series line charts, 3 comparison bar charts, and 1 health summary table).
-- Dashboard filters and interactive functionality (native filters for Container ID, Product, Route, and Time Range).
-- Visual presentation of container telemetry (`temperature_c`, `humidity_pct`, `vibration_g`) and statistical anomaly metrics.
-- Original synthetic dataset and data-generation script (`sensor_readings.csv` and `generate_data.py`).
