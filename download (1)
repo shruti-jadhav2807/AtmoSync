@@ -1,0 +1,36 @@
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*
+*secret*
+
+# Virtual environments
+.venv/
+.venv-dbt/
+venv/
+env/
+
+# dbt artifacts
+dbt_transformations/target/
+dbt_transformations/dbt_packages/
+dbt_transformations/logs/
+dbt_transformations/.user.yml
+
+# Python caches & build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
