@@ -1,1 +1,0 @@
-"""AtmoSync data engineering package."""
