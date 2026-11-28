@@ -1,0 +1,9 @@
+FROM apache/superset:4.1.1
+
+USER root
+RUN pip install --no-cache-dir "psycopg2-binary>=2.9,<3.0"
+COPY dashboard_visualization/superset_config.py /app/superset_config.py
+RUN chown superset:superset /app/superset_config.py
+USER superset
+
+ENV SUPERSET_CONFIG_PATH=/app/superset_config.py
