@@ -40,31 +40,6 @@ The pipeline combines idempotent batch CSV loading and real-time Apache Kafka st
 ![AtmoSync Architecture](screenshots/01_architecture.png)
 *End-to-end telemetry architecture connecting Python ingestion and Apache Kafka (KRaft) streaming to PostgreSQL 16, dbt Core transformations, and Apache Superset.*
 
-### 2. Apache Superset Dashboard & Telemetry Visualizations
-![Apache Superset Dashboard Overview](screenshots/02_superset_dashboard.png)
-*`AtmoSync – Smart Container Monitoring Dashboard` showing native dashboard filters (`Container ID`, `Product`, `Route`, `Time Range`), methodology disclaimer, and KPI cards (`240` readings, `5` active containers, `3` containers with statistical drift anomalies, `5.62 °C` average temperature).*
-
-![Temperature Trend Chart](screenshots/03_temperature_trend.png)
-*Hourly temperature trend (`°C`) across `C001`–`C005` showing `C002` (`tomato`, `Nashik-Delhi`) drifting upward to `10.22 °C`.*
-
-![Humidity Trend Chart](screenshots/09_humidity_trend.png)
-*Hourly relative humidity (`%`) comparison across all five refrigerated shipping containers.*
-
-![Container-wise Temperature Comparison](screenshots/10_container_temperature_comparison.png)
-*Average temperature (`°C`) per container, highlighting elevated mean temperature on `C002` (`7.64 °C`).*
-
-![Vibration Analysis by Container](screenshots/11_vibration_analysis.png)
-*Average and maximum vibration (`g`) across `C001`–`C005`.*
-
-### 3. Statistical Anomaly Analysis & Container Health Summary
-![Statistical Anomaly Comparison](screenshots/04_statistical_anomaly_analysis.png)
-*Counts of readings exceeding `|z-score| >= 2.0` relative to each container's initial 12-reading baseline (`C002`: `19`, `C001`: `7`, `C004`: `3`). Statistical drift indicators only — not confirmed biological spoilage.*
-
-![Container Health Summary Overview](screenshots/05a_container_health_summary_overview.png)
-*`marts.mart_container_health_summary` table view showing container metadata (`product`, `route`), `total_readings` (`48` each), and latest telemetry.*
-
-![Container Health Summary Drift & Anomalies](screenshots/05_container_health_summary.png)
-*`marts.mart_container_health_summary` drift columns showing `baseline_avg_temp_c`, `latest_temp_drift_c`, `latest_humidity_drift_pct`, `latest_temp_zscore`, and `statistical_drift_anomaly_count`.*
 
 ### 4. PostgreSQL, dbt Core & Apache Kafka Verification
 ![PostgreSQL sensor_readings Table](screenshots/06_postgresql_sensor_readings.png)
