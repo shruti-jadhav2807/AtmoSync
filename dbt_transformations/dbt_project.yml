@@ -1,0 +1,33 @@
+name: "atmosync"
+version: "1.0.0"
+config-version: 2
+
+profile: "atmosync"
+
+model-paths: ["models"]
+test-paths: ["tests"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+  - "logs"
+
+vars:
+  # Assumed statistical baseline window: first N chronological readings per container.
+  baseline_window_readings: 12
+  # Assumed statistical anomaly heuristic cutoff (|z-score| >= cutoff); NOT confirmed spoilage.
+  drift_zscore_cutoff: 2.0
+  # Current fleet product catalog; override via --vars if new products are onboarded.
+  accepted_products: ["avocado", "tomato", "mango", "spinach", "banana"]
+
+models:
+  atmosync:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
